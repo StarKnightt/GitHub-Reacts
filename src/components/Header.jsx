@@ -9,18 +9,18 @@ const Header = ({ className }) => {
         <nav>
           <ul className="flex space-x-6">
             <li>
-              <a href="https://github.com/StarKnightt/GitHub-Reacts" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-blue-500 transition-colors">
-                <FaGithub className="mr-2" /> GitHub
+              <a href="https://github.com/StarKnightt/GitHub-Reacts" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors">
+                <FaGithub className="text-2xl" />
               </a>
             </li>
             <li>
-              <a href="https://buymeacoffee.com/prasen" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-green-500 transition-colors">
-                <FaCoffee className="mr-2" /> Buy Me a Coffee
+              <a href="https://buymeacoffee.com/prasen" target="_blank" rel="noopener noreferrer" className="hover:text-green-500 transition-colors">
+                <FaCoffee className="text-2xl" />
               </a>
             </li>
             <li>
-              <a href="https://bento.me/prasenjitnayak" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-green-500 transition-colors">
-                <FaGlobe className="mr-2" /> Social Media
+              <a href="https://bento.me/prasenjitnayak" target="_blank" rel="noopener noreferrer" className="hover:text-green-500 transition-colors">
+                <FaGlobe className="text-2xl" />
               </a>
             </li>
           </ul>
