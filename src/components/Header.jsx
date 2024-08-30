@@ -10,16 +10,16 @@ const Header = ({ className }) => {
           <ul className="flex space-x-6">
             <li>
               <a href="https://github.com/StarKnightt/GitHub-Reacts" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-blue-500 transition-colors">
-                <FaGithub className="mr-2" /> GitHub Repo
+                <FaGithub className="mr-2" /> GitHub
               </a>
             </li>
             <li>
-              <a href="https://buymeacoffee.com/prasen" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-blue-500 transition-colors">
+              <a href="https://buymeacoffee.com/prasen" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-green-500 transition-colors">
                 <FaCoffee className="mr-2" /> Buy Me a Coffee
               </a>
             </li>
             <li>
-              <a href="https://bento.me/prasenjitnayak" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-blue-500 transition-colors">
+              <a href="https://bento.me/prasenjitnayak" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-green-500 transition-colors">
                 <FaGlobe className="mr-2" /> Social Media
               </a>
             </li>
