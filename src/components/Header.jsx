@@ -9,7 +9,7 @@ const Header = ({ className }) => {
         <nav>
           <ul className="flex space-x-6">
             <li>
-              <a href="https://github.com/StarKnightt/GitHub-Generator" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-blue-500 transition-colors">
+              <a href="https://github.com/StarKnightt/GitHub-Reacts" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-blue-500 transition-colors">
                 <FaGithub className="mr-2" /> GitHub Repo
               </a>
             </li>
