@@ -1,0 +1,45 @@
+/* app.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+  @apply bg-gray-900 text-white;
+}
+
+.App {
+  @apply relative overflow-hidden;
+}
+
+header, footer {
+  @apply bg-gray-800 bg-opacity-90 shadow-lg;
+}
+
+header {
+  @apply sticky top-0;
+}
+
+main {
+  @apply py-8 px-4;
+}
+
+.meme-generator {
+  @apply bg-gray-800 bg-opacity-90 rounded-lg shadow-xl p-6 max-w-md w-full;
+}
+
+.meme-generator input,
+.meme-generator button {
+  @apply w-full mb-4 p-2 rounded;
+}
+
+.meme-generator input {
+  @apply bg-gray-700 text-white;
+}
+
+.meme-generator button {
+  @apply bg-blue-600 hover:bg-blue-700 transition-colors duration-200;
+}
+
+.meme-image {
+  @apply mt-4 rounded-lg shadow-lg;
+}
