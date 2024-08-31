@@ -10,17 +10,17 @@ const Header = ({ className }) => {
           <ul className="flex space-x-6">
             <li>
               <a href="https://github.com/StarKnightt/GitHub-Reacts" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors">
-                <FaGithub className="text-2xl" />
+                <FaGithub className="text-2xl text-black" />
               </a>
             </li>
             <li>
               <a href="https://buymeacoffee.com/prasen" target="_blank" rel="noopener noreferrer" className="hover:text-green-500 transition-colors">
-                <FaCoffee className="text-2xl" />
+                <FaCoffee className="text-2xl text-black" />
               </a>
             </li>
             <li>
               <a href="https://bento.me/prasenjitnayak" target="_blank" rel="noopener noreferrer" className="hover:text-green-500 transition-colors">
-                <FaGlobe className="text-2xl" />
+                <FaGlobe className="text-2xl text-black" />
               </a>
             </li>
           </ul>

@@ -2,13 +2,14 @@ import React, { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { generateMeme } from '/services/api';
 import AnimatedText from './AnimatedText';
-import { FaGithub, FaSmile, FaAngry } from 'react-icons/fa';
+import { FaGithub, FaSmile, FaAngry, FaCopy } from 'react-icons/fa';
 
 const MemeGenerator = () => {
   const [username, setUsername] = useState('');
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [copied, setCopied] = useState(false);
 
   const handleGenerate = useCallback(async (type) => {
     if (!username.match(/^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i)) {
@@ -31,33 +32,39 @@ const MemeGenerator = () => {
     setLoading(false);
   }, [username]);
 
+  const handleCopy = () => {
+    navigator.clipboard.writeText(result);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col items-center justify-center p-4 text-white"
+      className="flex flex-col items-center justify-center p-6 text-gray-800"
     >
       <AnimatedText
         text="GitHub Reacts"
-        className="text-5xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
+        className="text-6xl font-bold mb-10 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600"
       />
       <motion.div
-        className="bg-gray-800 bg-opacity-80 p-8 rounded-lg shadow-2xl w-full max-w-md backdrop-filter backdrop-blur-sm"
+        className="bg-white bg-opacity-40 p-10 rounded-lg shadow-2xl w-full max-w-lg backdrop-filter backdrop-blur-sm"
         whileHover={{ scale: 1.02 }}
         transition={{ type: "spring", stiffness: 300 }}
       >
-        <div className="relative mb-6">
-          <FaGithub className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+        <div className="relative mb-8">
+          <FaGithub className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-xl" />
           <input
             type="text"
             placeholder="Enter GitHub username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="w-full px-10 py-3 bg-gray-700 text-white border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
+            className="w-full px-12 py-4 bg-gray-100 text-gray-800 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 text-lg"
           />
         </div>
-        <div className="flex justify-between space-x-4">
+        <div className="flex justify-between space-x-6">
           <Button onClick={() => handleGenerate('compliment')} disabled={loading || !username} color="green" icon={<FaSmile />}>
             Compliment
           </Button>
@@ -71,7 +78,7 @@ const MemeGenerator = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="mt-4 text-red-400"
+              className="mt-6 text-red-500 text-lg"
             >
               {error}
             </motion.p>
@@ -84,9 +91,27 @@ const MemeGenerator = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ delay: 0.2 }}
-              className="mt-6 p-4 bg-gray-700 rounded-md shadow-inner"
+              className="mt-8 p-6 bg-gray-100 rounded-md shadow-inner relative"
             >
-              <p className="text-lg font-medium text-white">{result}</p>
+              <p className="text-xl font-medium text-gray-800">{result}</p>
+              <motion.button
+                onClick={handleCopy}
+                className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 focus:outline-none"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <FaCopy size={20} />
+              </motion.button>
+              {copied && (
+                <motion.span
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="absolute top-2 right-10 text-sm text-green-500"
+                >
+                  Copied!
+                </motion.span>
+              )}
             </motion.div>
           )}
         </AnimatePresence>
@@ -99,7 +124,7 @@ const Button = ({ onClick, disabled, color, icon, children }) => (
   <motion.button
     onClick={onClick}
     disabled={disabled}
-    className={`flex items-center justify-center px-4 py-2 text-white bg-${color}-500 rounded-md hover:bg-${color}-600 focus:outline-none focus:ring-2 focus:ring-${color}-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 w-full`}
+    className={`flex items-center justify-center px-6 py-3 text-white bg-${color}-500 rounded-md hover:bg-${color}-600 focus:outline-none focus:ring-2 focus:ring-${color}-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 w-full text-lg`}
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
   >

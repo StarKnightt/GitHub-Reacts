@@ -17,7 +17,7 @@ const Footer = ({ className }) => {
             <FaGlobe className="mr-2" /> Social Media
           </a>
         </div> */}
-        <p className="mt-2 md:mt-0">Created by <a href="https://github.com/StarKnightt" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-500 transition-colors">Prasenjit Nayak</a></p>
+        <p className="mt-2 md:mt-0 text-black">Created by <a href="https://github.com/StarKnightt" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-500 transition-colors">Prasenjit Nayak</a></p>
       </div>
     </footer>
   );
