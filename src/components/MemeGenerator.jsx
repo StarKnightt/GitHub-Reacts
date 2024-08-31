@@ -40,15 +40,15 @@ const MemeGenerator = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="flex flex-col items-center justify-center p-6 text-gray-800"
-    >
-      <AnimatedText
-        text="GitHub Reacts"
-        className="text-6xl font-bold mb-10 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600"
-      />
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    className="flex flex-col items-center justify-center p-6 text-gray-800"
+  >
+    <AnimatedText
+      text="GitHub Reacts"
+      className="text-6xl font-bold mb-10 text-center"
+    />
       <motion.div
         className="bg-white bg-opacity-40 p-10 rounded-lg shadow-2xl w-full max-w-lg backdrop-filter backdrop-blur-sm"
         whileHover={{ scale: 1.02 }}
