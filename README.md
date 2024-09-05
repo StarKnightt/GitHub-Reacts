@@ -75,10 +75,10 @@ VITE_GROQ_API_KEY=your_api_key_here
 ## Contributing
 
 Feel free to open issues or submit pull requests to improve the project. 
-
+<!-- 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details. -->
 
 ## Contact
 
